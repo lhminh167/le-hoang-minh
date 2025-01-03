@@ -4,7 +4,6 @@ import { tokens } from "./tokens";
 export async function getOutputAmount(input: GetOutputAmountRequest): Promise<ApiResponse<GetOutputAmountResponse>> {
     try {
         await wait();
-        console.log(input)
 
         const inputCurrency = getUnduplicatedTokenList().find(token => token.currency === input.inputCurrency)
         const outputCurrency = getUnduplicatedTokenList().find(token => token.currency === input.outputCurrency)
@@ -22,7 +21,6 @@ export async function getOutputAmount(input: GetOutputAmountRequest): Promise<Ap
             errorMessage: ""
         }
     } catch (error) {
-        console.log(error)
         return {
             payload: { outputAmount: 0 },
             errorMessage: "Something went wrong. Please try again later."
@@ -38,7 +36,6 @@ export async function getTokens(): Promise<ApiResponse<GetTokensResponse>> {
             errorMessage: ""
         }
     } catch (error) {
-        console.log(error)
         return {
             payload: { tokens: [] },
             errorMessage: "Something went wrong. Please try again later."

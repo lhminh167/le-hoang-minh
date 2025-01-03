@@ -1,6 +1,7 @@
 import { Token } from "@/components/HomePage/HomePageModel";
 
 // This list contains duplicated records such as BUSD, USDC
+// Some currencies in this list do not have corresponding SVG images in the repo https://github.com/Switcheo/token-icons/tree/main/tokens
 export const tokens: Token[] = [
     {
         "currency": "BLUR",
