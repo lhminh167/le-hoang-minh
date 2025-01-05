@@ -52,11 +52,11 @@ const WalletPage: React.FC<Props> = (props: Props) => {
     const sortedBalances = useMemo(() => {
         /**
          * The filter method call could be avoided by using an if statement in a loop to get balance records that meet the condition. 
-         * This loop could also be used attach the neccessary properties to balance records.
+         * This loop could also be used to attach the neccessary properties to balance records.
          */
         return balances.filter((balance: WalletBalance) => {
             /**
-             * lhsPriority in the if statement is not defined, it should be replaced with balancePriority
+             * lhsPriority variable in the if statement is not defined, it should be replaced with balancePriority
              */
             /**
              * The if statement is too complicated, it can be simplified to 
@@ -73,12 +73,12 @@ const WalletPage: React.FC<Props> = (props: Props) => {
             /**
              * The getPriority function is called too many times. 
              * At the beginning, we should attach priority property to each balance records. 
-             * This will minimize the number of getPriority function calls.
+             * This will minimize the number of getPriority calls.
              */
             const leftPriority = getPriority(lhs.blockchain);
             const rightPriority = getPriority(rhs.blockchain);
             /**
-             * The if statement is unnecesarily complicated, it can be simplified to
+             * The if statement is unnecessarily complicated, it can be simplified to
              * return rightPriority - leftPriority;
              */
             if (leftPriority > rightPriority) {
