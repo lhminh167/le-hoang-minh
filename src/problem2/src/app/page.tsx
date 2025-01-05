@@ -94,6 +94,7 @@ export default function HomePage() {
               <Select
                 name='inputCurrency'
                 labelId='inputCurrency'
+                label='Currency to send'
                 id='inputCurrency'
                 value={state.inputCurrency}
                 onChange={change}
@@ -174,6 +175,7 @@ export default function HomePage() {
               <Select
                 name='outputCurrency'
                 labelId='outputCurrency'
+                label=' Currency to receive'
                 id='outputCurrency'
                 value={state.outputCurrency}
                 onChange={change}
